@@ -246,3 +246,258 @@
   </main>
 </body>
 </html>
+
+from pathlib import Path
+
+html = r'''<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index,follow">
+  <meta name="description" content="Privacy Policy for Mango Pie English, a children's offline English-learning app.">
+  <title>Mango Pie English Privacy Policy</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #263238;
+      --muted: #5f6b70;
+      --accent: #39796b;
+      --accent-light: #eaf5f0;
+      --border: #dfe7e3;
+      --paper: #ffffff;
+      --page: #f4f7f5;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+    .page {
+      width: min(900px, calc(100% - 32px));
+      margin: 32px auto;
+      padding: clamp(22px, 5vw, 52px);
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 8px 28px rgba(28, 55, 45, 0.05);
+    }
+    header {
+      padding-bottom: 24px;
+      margin-bottom: 28px;
+      border-bottom: 2px solid var(--border);
+    }
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-size: .9rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+    }
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      line-height: 1.3;
+    }
+    .subtitle, .meta, footer { color: var(--muted); }
+    .meta { font-size: .93rem; }
+    h2 {
+      margin: 34px 0 12px;
+      padding-left: 12px;
+      border-left: 4px solid var(--accent);
+      font-size: 1.28rem;
+      line-height: 1.45;
+    }
+    p { margin: 10px 0; }
+    ul, ol { padding-left: 1.5rem; }
+    li { margin: 6px 0; }
+    a { color: var(--accent); overflow-wrap: anywhere; }
+    .notice {
+      margin: 22px 0;
+      padding: 16px 18px;
+      background: var(--accent-light);
+      border: 1px solid #cfe6da;
+      border-radius: 12px;
+    }
+    .placeholder {
+      padding: 1px 5px;
+      background: #fff3d6;
+      border-radius: 4px;
+      color: #6d4d00;
+    }
+    .contents {
+      padding: 18px 22px;
+      background: #fafcfb;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+    .contents h2 {
+      margin-top: 0;
+      border-left: 0;
+      padding-left: 0;
+    }
+    .contents ol { margin-bottom: 0; }
+    .contents a { text-decoration: none; }
+    footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-size: .9rem;
+    }
+    @media (max-width: 600px) {
+      body { font-size: 15px; }
+      .page {
+        width: 100%;
+        margin: 0;
+        padding: 24px 20px 32px;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+      h2 { margin-top: 28px; font-size: 1.18rem; }
+    }
+    @media print {
+      body { background: white; }
+      .page { width: 100%; margin: 0; padding: 0; border: 0; box-shadow: none; }
+      a { color: inherit; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <p class="eyebrow">MANGO PIE ENGLISH</p>
+      <h1>Mango Pie English Privacy Policy</h1>
+      <p class="subtitle">Thank you for using Mango Pie English. We value the privacy of children and all users. This policy explains how information is handled when you use the app.</p>
+      <p class="meta">Effective date: October 27, 2026 | Last updated: October 27, 2026</p>
+    </header>
+
+    <div class="notice">
+      <strong>Important:</strong> According to the app's current design, Mango Pie English is an offline English-learning app. Learning images, audio, and other learning resources are included in the app installation package. The app does not require an account, display in-app advertisements, or offer additional in-app purchases. Before publishing this policy, please confirm that the app's actual behavior, permissions, SDKs, and purchase flow are consistent with these statements.
+    </div>
+
+    <nav class="contents" aria-label="Table of contents">
+      <h2>Contents</h2>
+      <ol>
+        <li><a href="#scope">Scope of This Policy</a></li>
+        <li><a href="#collection">Information We Collect</a></li>
+        <li><a href="#use">How Information Is Used</a></li>
+        <li><a href="#children">Children's Privacy</a></li>
+        <li><a href="#audio">Voice and Audio Features</a></li>
+        <li><a href="#third-party">Third-Party Services and Payments</a></li>
+        <li><a href="#storage">Data Storage and Security</a></li>
+        <li><a href="#permissions">App Permissions</a></li>
+        <li><a href="#rights">Your Privacy Rights</a></li>
+        <li><a href="#changes">Changes to This Policy</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ol>
+    </nav>
+
+    <section id="scope">
+      <h2>1. Scope of This Policy</h2>
+      <p>This Privacy Policy applies to Mango Pie English (the “App”). The App is designed primarily for children's English-learning and vocabulary practice. Its features may include tap-to-read picture lessons, character dialogues, word cards, English songs or audio listening, and listen-and-match quizzes.</p>
+      <p>This policy explains whether and how personal information is collected, used, stored, shared, or otherwise processed through the App, and how users can contact the developer about privacy-related requests.</p>
+    </section>
+
+    <section id="collection">
+      <h2>2. Information We Collect</h2>
+      <p>Under the App's current design, users do not need to create an account, sign in, or submit personal details. Core learning content is available locally on the device, and learning resources are included in the app installation package.</p>
+      <p>Within the App's own functionality:</p>
+      <ul>
+        <li><strong>Identity and contact information:</strong> The App does not ask users to provide their names, government identification numbers, phone numbers, email addresses, or account details.</li>
+        <li><strong>Location and contacts:</strong> The App does not need access to precise location data or the user's address book.</li>
+        <li><strong>Learning records:</strong> The App does not upload learning progress, quiz results, or learning records to the developer's servers.</li>
+        <li><strong>Voice and recordings:</strong> The App does not collect or upload users' voice recordings for the learning features described in this policy. If a future version adds voice recording, speech recognition, or cloud-based processing, this policy will be updated before that functionality is introduced, and appropriate authorization will be obtained where required.</li>
+        <li><strong>Advertising and tracking:</strong> The App does not contain in-app advertisements or collect personal information for advertising tracking.</li>
+      </ul>
+      <p>The App does not currently use its own server to receive users' personal information. The device operating system, app marketplace, or payment provider may process information needed for app operation, download, purchase, or transaction handling under their own policies. Such processing is carried out by the relevant provider and is distinct from the developer directly collecting information through the App.</p>
+    </section>
+
+    <section id="use">
+      <h2>3. How Information Is Used</h2>
+      <p>The App primarily displays English-learning content and runs learning interactions locally on the device. Under the current design, the developer does not collect personal information through the App and does not use personal information for advertising profiles, personalized advertising, or the sale or rental of personal information.</p>
+      <p>If a future version introduces a feature that requires personal information to be processed, we will update this policy before the feature is released. We will explain the purpose, types of information, processing methods, retention period, and available user controls, and obtain consent when required by applicable law.</p>
+    </section>
+
+    <section id="children">
+      <h2>4. Children's Privacy</h2>
+      <p>The App is designed for children's learning. We take children's privacy seriously. Children are not required to create accounts or provide personal details such as names, home addresses, or contact information to the developer.</p>
+      <p>We encourage parents and guardians to supervise children's use of smart devices and to help them understand app-store purchases, device permissions, and privacy settings. Purchases may be processed by the app marketplace or payment provider under its own rules. Parents and guardians should use the family-management and purchase-confirmation controls provided by their device or app marketplace as appropriate.</p>
+      <p>If you believe a child has provided personal information to the developer through the App, or if you have questions about this policy, please contact us using the details in the “Contact Us” section. We will review the matter and take appropriate steps as required by applicable law.</p>
+    </section>
+
+    <section id="audio">
+      <h2>5. Voice and Audio Features</h2>
+      <p>The App may include prerecorded English songs, pronunciation, or other audio content bundled with the installation package. Playing this built-in audio does not require the user's voice to be uploaded to the developer.</p>
+      <p>If the current version does not include recording or speech-recognition functionality, the App does not record users' voices for learning activities. If a future version adds microphone access, recording, speech recognition, or voice analysis, we will explain how the feature works, why the permission is needed, and how related data is handled. Where required, we will obtain authorization from the user or the child's parent or guardian before enabling it.</p>
+    </section>
+
+    <section id="third-party">
+      <h2>6. Third-Party Services and Payments</h2>
+      <p>The App is designed primarily for offline learning, and its learning images, audio, and other learning resources are included in the installation package. The developer does not provide users' personal information to third parties because, under the current design, the App itself does not collect or upload users' personal information.</p>
+      <p>When the App is distributed through Huawei AppGallery or another app marketplace, the relevant platform may process download, installation, order, payment, refund, or transaction records under its own terms and privacy policy. The platform is responsible for its own processing. Please consult the privacy policy of the app marketplace or payment provider you use for details.</p>
+      <p>The App does not contain in-app advertisements and does not offer additional in-app purchases. Any purchase or download is subject to the product information, pricing, order details, and transaction rules displayed by the app marketplace.</p>
+      <p>If a future version integrates a new third-party SDK, analytics tool, cloud service, or other third-party component, we will assess its data practices before release and update this policy when needed. The update will identify the relevant third party, its purpose, the types of information processed, and a link to its privacy policy where appropriate.</p>
+    </section>
+
+    <section id="storage">
+      <h2>7. Data Storage and Security</h2>
+      <p>The App's learning resources are stored on the device as part of the installation package and are read locally by the App. Under the current design, the developer does not maintain a remote profile of users' personal information through the App.</p>
+      <p>We take reasonable measures during app development and maintenance to minimize unnecessary data processing and help maintain app security. However, no software or device can guarantee absolute security. Please keep your device secure and use the screen-lock, update, and security features provided by your operating system.</p>
+      <p>If a future feature requires personal information to be stored or transmitted, this policy will describe the relevant information, storage location, retention period, deletion method, and security measures.</p>
+    </section>
+
+    <section id="permissions">
+      <h2>8. App Permissions</h2>
+      <p>The App's core offline-learning features are intended to use only the system capabilities necessary for normal operation. The actual permissions depend on the version installed on your device and the operating system.</p>
+      <p>You can review and manage app permissions in your device's system settings. If a future version requests a new sensitive permission, we will explain why it is needed when the related feature requires it. Where authorization is required by law, the App will request it before accessing the relevant capability. Denying a non-essential permission should not affect unrelated core learning features.</p>
+    </section>
+
+    <section id="rights">
+      <h2>9. Your Privacy Rights</h2>
+      <p>To the extent permitted or required by applicable law, users or a child's parent or guardian may contact us with privacy-related questions or requests, including to:</p>
+      <ul>
+        <li>Learn about this policy and the App's information-handling practices;</li>
+        <li>Ask whether the App holds personal information about them;</li>
+        <li>Request access to, correction of, or deletion of personal information, or withdraw consent where applicable law provides these rights; and</li>
+        <li>Submit feedback, complaints, or other requests about privacy practices.</li>
+      </ul>
+      <p>Under the current design, the App does not collect or upload users' personal information through its own service. Therefore, the developer generally has no online user profile or cloud-based learning record to retrieve, modify, or delete. App-store purchase records, device-system records, and payment-service records should be addressed to the relevant service provider.</p>
+      <p>To make a privacy request, please use the contact details below. To protect users and children, we may need to reasonably verify the requester's identity or guardianship. We will handle requests within a reasonable period and as required by applicable law.</p>
+    </section>
+
+    <section id="changes">
+      <h2>10. Changes to This Policy</h2>
+      <p>We may update this Privacy Policy when app features, data-processing practices, applicable laws, or platform requirements change. The updated version will be published on this page, and the “Last updated” date at the top will be revised.</p>
+      <p>If a change materially affects how personal information is handled, we will provide an appropriate notice and obtain consent where required by applicable law or platform rules. We encourage you to review this page periodically.</p>
+    </section>
+
+    <section id="contact">
+      <h2>11. Contact Us</h2>
+      <p>If you have questions about this Privacy Policy, children's privacy, or a personal-information request, please contact the developer:</p>
+      <ul>
+        <li><strong>App name:</strong> Mango Pie English (芒果派英语)</li>
+        <li><strong>Developer name:</strong> <span class="placeholder">[Enter the developer name registered with Huawei AppGallery]</span></li>
+        <li><strong>Contact email:</strong> <span class="placeholder">[Enter a valid email address that you monitor]</span></li>
+      </ul>
+      <p>Please do not include unnecessary sensitive personal information in general inquiries. We will handle your request as required by applicable law.</p>
+    </section>
+
+    <footer>
+      <p>© 2026 Mango Pie English (芒果派英语)</p>
+      <p>This page describes the App's privacy policy. Before publishing it, replace the developer contact placeholders and confirm that the policy accurately reflects the App's actual behavior.</p>
+    </footer>
+  </main>
+</body>
+</html>
+'''
+
+out = Path("/mnt/data/privacy-policy-en.html")
+out.write_text(html, encoding="utf-8")
+print(f"Created {out} ({out.stat().st_size:,} bytes)")
+
